@@ -1,21 +1,24 @@
 
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-4">
-      <h1> <%= @cocktail.name %></h1>
+  <div class="card-category background-image">
+    <%= image_tag "https://source.unsplash.com/featured/?#{@cocktail.name}/930x180", alt: "#{@cocktail.name}", class: "card-category background-image"%>
+    <%= @cocktail.name %>
+  </div>
+  <div class="row justify-content-left ">
+    <div class="col-8">
+      <h1><%=@cocktail.name %></h1>
+      <h4>Recipe</h4>
       <% @cocktail.doses.each do |dose| %>
-        <p><%="#{dose.ingredient.name} #{dose.description}"  %>
+        <p><%="#{dose.ingredient.name} #{dose.quantity} cl"  %>
        <%= link_to "Delete", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></p>
       <% end %>
     </div>
-  </div>
-  <div class="row justify-content-center">
     <div class="col-4">
       <%= simple_form_for([@cocktail, @dose]) do |f| %>
-
+        <%= f.submit 'Customize recipe', class: 'btn btn-primary m-3' %>
         <%= f.input :description %>
         <%= f.association :ingredient %>
-        <%= f.submit 'Add dose', class: 'btn btn-primary' %>
+        <%= f.input :quantity %>
         <%= link_to "Back to list",cocktails_path, class: "btn btn-primary"  %>
       <% end %>
     </div>
