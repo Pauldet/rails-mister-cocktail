@@ -14,9 +14,14 @@
 .nav-vertical {
   width:100%;
   border-radius:0.25rem;
-  padding: 0.625rem
+  background-color: #c5c5c2;
+  padding-right: 0px;
+  padding-left: 0px;
+  .nav-link {
+    border: 1px solid;
+    border-color: black;
+    margin-bottom: 0px;
 
-}
-.nav-link {
+  }
 
 }

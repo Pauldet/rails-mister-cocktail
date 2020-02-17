@@ -20,10 +20,11 @@
         </div>
       </div>
       <div class="col-3 flex-column text-right nav-vertical ">
+        <p class="nav-link text-center">List of cocktails</p>
         <% @cocktails.each do |cocktail| %>
         <p class="nav-link"> <%= link_to "#{cocktail.name}", cocktail_path(cocktail) %></p>
         <% end %>
+        <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary m-t-2 "  %>
       </div>
     </div>
-    <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary "  %>
 </div>

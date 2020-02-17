@@ -39,6 +39,12 @@
   padding: 16px;
 }
 
+.card-product :hover {
+  height:110%;
+  width: 110%;
+
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -56,5 +62,6 @@
 
 .background-image {
   background-color: rgba(0,0,0,0.3);
+  object-fit: cover;
 }
 
